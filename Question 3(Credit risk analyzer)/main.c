@@ -2,7 +2,8 @@
 
 int main() {
     int price, quantity,customers, counter = 0;
-    float credit_limit,  value;
+    float credit_limit, value, balance;
+    float totalPrice = 0.0;
 
 
     printf("Please enter the number of customers you would like to serve:\n ");
@@ -18,12 +19,30 @@ int main() {
          printf("Enter quantity of goods you wish to purchase: ");
         scanf("%d", &quantity);
 
-        printf("Enter price of each good you wish to purchase: ");
-        scanf("%d", &price);
-       
 
-        value= price * quantity;
+    float prices[quantity];
 
+    for (int i = 0; i < quantity; i++) {
+        printf("Enter the price of item %d: ", i + 1);
+        scanf("%f", &prices[i]);
+        totalPrice += prices[i];
+    }
+
+
+    printf("\nPrices of the items:\n");
+    for (int i = 0; i < quantity; i++) {
+        printf("Price of item %d: %.2f\n", i + 1, prices[i]);
+    }
+
+    printf("\nTotal Price: %.2f\n", totalPrice);
+
+
+
+
+
+
+        balance = credit_limit - totalPrice;
+        value = totalPrice;
 
         while (value > credit_limit) {
             printf("Sorry you cannot purchase goods worthy such a value on credit.\n");
@@ -31,19 +50,21 @@ int main() {
             scanf("%d", &quantity);
             printf("Enter the  price:\n ");
             scanf("%d", &price);
-            
+
 
             value = price * quantity;
+
         }
 
 
         printf("Your total purchase is Ksh. %.2f\n", value);
+        printf("Your balance is Ksh: %2f\n", balance);
 
 
         counter++;
     }
-
-
-    printf("Thank You for purchasing from us.\n");
     return 0;
 }
+
+
+
