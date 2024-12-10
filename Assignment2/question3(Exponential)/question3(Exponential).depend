@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1733832454 source:e:\git\alpha-programmers\assignment2\question3(exponential)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
