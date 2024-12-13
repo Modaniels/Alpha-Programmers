@@ -4,15 +4,17 @@
 
 //Function definitions
 int factorial(int);
-int exponetial(int);
+float exponential(int);
 
 //MAIN FUNCTION
 int main()
 {
-    int x;
+    float result;
+    int x,ans;
     printf("Enter the value of x:");
     scanf("%d",&x);
-    exponential(x);
+    result=exponential(x);
+    printf("Your answer is %.2f",result);
     return 0;
 }
 
@@ -27,15 +29,16 @@ int factorial(int x)
 }
 
 //EXPONENTIAL
-int exponential(int x)
+float exponential(int x)
 {
     int counter=0;
     float sum=1.0;
     //loop
-    for (counter=0;counter<x;counter++){
+    for (counter=0;counter<=x;counter++){
         sum+=pow(x,counter)/factorial(counter);
     }
-    printf("Your answer is %.2f",sum);
-}
 
+    return sum;
+
+}
 
