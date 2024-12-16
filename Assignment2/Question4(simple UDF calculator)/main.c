@@ -14,7 +14,7 @@ float divide(float a, float b);
 float get_number(const char *input_msg);
 char get_operator();
 void print_result(float num1, float num2, char choice, float result);
-
+//MAIN FUNCTION
 int main() {
     char choice;
     do {
@@ -24,33 +24,33 @@ int main() {
 
         float result;
         switch (operator) {
-            case ADD: 
-                result = add(num1, num2); 
+            case ADD:
+                result = add(num1, num2);
                 break;
-            case SUBTRACT: 
-                result = subtract(num1, num2); 
+            case SUBTRACT:
+                result = subtract(num1, num2);
                 break;
-            case MULTIPLY: 
-                result = multiply(num1, num2); 
+            case MULTIPLY:
+                result = multiply(num1, num2);
                 break;
-            case DIVIDE: 
-                result = divide(num1, num2); 
+            case DIVIDE:
+                result = divide(num1, num2);
                 break;
-            default: 
+            default:
                 printf("Unexpected error: invalid operator.\n");
-                continue; 
+                continue;
         }
 
         print_result(num1, num2, operator, result);
 
         printf("Do you want to perform another calculation? (y/n): ");
         scanf(" %c", &choice);
-    } while (choice == 'y');
+    } while (choice == 'y' || choice == 'Y');
 
     printf("Farewell, soldier!\n");
     return 0;
 }
-
+//GET FUNCTION
 float get_number(const char *input_msg) {
     float num;
     while (1) {
@@ -59,11 +59,11 @@ float get_number(const char *input_msg) {
             return num;
         } else {
             printf("Invalid input. Please enter a valid number.\n");
-            while (getchar() != '\n'); 
+            while (getchar() != '\n');
         }
     }
 }
-
+//GET OPERATOR
 char get_operator() {
     char operator;
     while (1) {
@@ -79,13 +79,25 @@ char get_operator() {
         } else {
             printf("Invalid choice! Valid operators are 'a', 's', 'm', or 'd'. Try again.\n");
             while (getchar() != '\n');
-        }          
+        }
     }
 }
-
-float add(float a, float b) { return a + b; }
-float subtract(float a, float b) { return a - b; }
-float multiply(float a, float b) { return a * b; }
+//ADD FUNCTION
+float add(float a, float b)
+{
+    return a + b;
+}
+//SUBSTRACT FUNCTION
+float subtract(float a, float b)
+{
+    return a - b;
+}
+//MULTIPLY FUNCTION
+float multiply(float a, float b)
+{
+    return a * b;
+}
+//DIVIDE FUNCTION
 float divide(float a, float b) {
     if (b == 0) {
         printf("Error! Division by zero is not allowed.\n");
@@ -93,7 +105,7 @@ float divide(float a, float b) {
     }
     return a / b;
 }
-
+//PRINT FUNCTION
 void print_result(float num1, float num2, char choice, float result) {
     const char *operation;
     switch (choice) {
