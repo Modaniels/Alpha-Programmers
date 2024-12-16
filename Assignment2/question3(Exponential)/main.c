@@ -32,7 +32,7 @@ int factorial(int x)
 float exponential(int x)
 {
     int counter=0;
-    float sum=1.0;
+    float sum;
     //loop
     for (counter=0;counter<=x;counter++){
         sum+=pow(x,counter)/factorial(counter);
