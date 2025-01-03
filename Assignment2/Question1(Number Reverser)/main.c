@@ -11,7 +11,7 @@ int main() {
     scanf("%d", &num);
 
     if (num < 0) {
-        is-negative = true;
+        isNegative = true;
         num = -num; 
     }
 
